@@ -4,32 +4,30 @@
 Student::Student(int perm, 
 		 std::string lastName, 
 		 std::string firstAndMiddleNames) {
-  // THIS EMPTY CONSTRUCTOR IS A STUB
-  // DELETE THESE COMMENTS AND REPLACE WITH APPROPRIATE CODE
-  // REMEMBER: PURPOSE OF A CONSTRUCTOR IS TO INITIALIZE 
-  // ALL DATA MEMBERS WITH REASONABLE VALUES  
+  this->perm=perm;
+  this->lastName=lastName;
+  this->firstAndMiddleNames=firstAndMiddleNames;
 }
 
 int Student::getPerm() const { 
-  return -999;
+  return perm;
 }
 
 std::string Student::getLastName() const { 
-  return "stub";
+  return lastName;
 }
 
 std::string Student::getFirstAndMiddleNames() const { 
-  return "stub";
+  return firstAndMiddleNames;
 }
 
-std::string Student::getFullName() const { 
-  return "stub";
+std::string Student::getFullName() const {
+  std::ostringstream oss;
+  oss << this->getFirstAndMiddleNames() << " " << this->getLastName();
+				return oss.str();
 }
 
-std::string Student::toString() const { 
-  return "stub";
-  /*
-  // e.g. [12345,Smith,Malory Logan]
+std::string Student::toString() const {  
   std::ostringstream oss;
   
   oss << "[" 
@@ -37,7 +35,5 @@ std::string Student::toString() const {
       << this->getLastName() << ","
       << this->getFirstAndMiddleNames() << "]";
   return oss.str();
-  */
-
 } 
 
